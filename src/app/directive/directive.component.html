@@ -1,0 +1,30 @@
+<div class="radio" style="margin: 100px;">
+    <label>
+    <input type="radio" name="recheck" (click)="onChange(true)">
+    Đàn ông
+  </label >
+    <label style="margin-left: 20px;">
+    <input type="radio" name="recheck" (click)="onChange(false)">
+    Đàn bà
+  </label>
+
+    <p *ngIf="isCheck; else Female"> Đàn ông </p>
+    <ng-template #Female>
+        <p> Đàn bà </p>
+    </ng-template>
+
+    <!-- ngFor -->
+
+    <ng-container *ngIf="listSchool.length > 0; else Noproducts">
+        <div *ngFor="let item of listSchool; trackBy: trackById"> {{item}} </div>
+
+    </ng-container>
+
+    <ng-template #Noproducts>
+        <p> Không có sản phẩm </p>
+    </ng-template>
+
+
+
+
+</div>
